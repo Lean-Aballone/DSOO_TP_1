@@ -1,11 +1,11 @@
-# DSOO_TP_1
+# DSOO_TP_1 (*1B*) { EQUIPO: "2" } 
 ### Integrantes:
-   >Aballone, Leandro Ezequiel  (comisión **C**)
+   >Aballone, Leandro Ezequiel
    
-   >Garrido, Andrés (comisión **B**)
+   >Garrido, Andrés
 
-   >Luaces, Micaela Natalia (comisión **B**)
+   >Luaces, Micaela Natalia
 
-   >Nuñez Cresto, Paula (comisión **B**)
+   >Nuñez Cresto, Paula
 
-   >Van Den Dooren, Adriana Beatriz (comisión **B**)
+   >Van Den Dooren, Adriana Beatriz
