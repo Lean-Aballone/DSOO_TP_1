@@ -1,0 +1,15 @@
+C:\Users\Lean\Documents\IFTS29\c#\DSOO_TP_1\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0\ClubDeportivo.exe
+C:\Users\Lean\Documents\IFTS29\c#\DSOO_TP_1\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0\ClubDeportivo.deps.json
+C:\Users\Lean\Documents\IFTS29\c#\DSOO_TP_1\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0\ClubDeportivo.runtimeconfig.json
+C:\Users\Lean\Documents\IFTS29\c#\DSOO_TP_1\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0\ClubDeportivo.dll
+C:\Users\Lean\Documents\IFTS29\c#\DSOO_TP_1\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0\ClubDeportivo.pdb
+C:\Users\Lean\Documents\IFTS29\c#\DSOO_TP_1\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0\ClubDeportivo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lean\Documents\IFTS29\c#\DSOO_TP_1\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0\ClubDeportivo.AssemblyInfoInputs.cache
+C:\Users\Lean\Documents\IFTS29\c#\DSOO_TP_1\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0\ClubDeportivo.AssemblyInfo.cs
+C:\Users\Lean\Documents\IFTS29\c#\DSOO_TP_1\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0\ClubDeportivo.csproj.CoreCompileInputs.cache
+C:\Users\Lean\Documents\IFTS29\c#\DSOO_TP_1\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0\ClubDeportivo.sourcelink.json
+C:\Users\Lean\Documents\IFTS29\c#\DSOO_TP_1\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0\ClubDeportivo.dll
+C:\Users\Lean\Documents\IFTS29\c#\DSOO_TP_1\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0\refint\ClubDeportivo.dll
+C:\Users\Lean\Documents\IFTS29\c#\DSOO_TP_1\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0\ClubDeportivo.pdb
+C:\Users\Lean\Documents\IFTS29\c#\DSOO_TP_1\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0\ClubDeportivo.genruntimeconfig.cache
+C:\Users\Lean\Documents\IFTS29\c#\DSOO_TP_1\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0\ref\ClubDeportivo.dll
