@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +8,13 @@ namespace ClubDeportivo
 {
     class CLubDeportivo : IAdministracion
     {
+
         private const int TOPEACTIVIDADESPORSOCIO = 3;
+
+
         private List<Socios> Activos;           //  ****
         private List<Socios> Inactivos;         //  REGISTRO DE LOS SOCIOS Y NO SOCIOS.
         private List<NoSocios> Aspirantes;      //  ****
-
 
         public string InscribirActividad(string actividadDeportiva, int idSocio) {
 
