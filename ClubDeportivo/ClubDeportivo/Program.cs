@@ -1,16 +1,17 @@
 namespace ClubDeportivo {
     internal class Program {
-        CLubDeportivo admin = new CLubDeportivo();
         static void Main(string[] args) {
+
+        ClubDeportivo admin = new ClubDeportivo();
             sbyte opc;
             do {
                 opc = Menu.Run();
                 switch (opc) {
                     case 1:
-                        Menu.Socios();
+                        Menu.Socios(admin);
                         break;
                     case 2:
-                        Menu.Socios();
+                        Menu.NoSocios();
                         break;
                     case 3:
                         Menu.Plantel();
