@@ -18,20 +18,26 @@ namespace ClubDeportivo
         public List<Actividades> L_Actividades {  get; set; }
 
         public string InscribirActividad(sbyte actividadDeportiva, int idSocio) {
-            if (!L_Activos.Exists(socio => socio.Id.Equals(idSocio))) return "SOCIO INEXISTENTE"; // el socio no se encuentra registrado dentro de la colección de socios en el club deportivo.
-            if (!L_Inactivos.Exists(socio => socio.Id.Equals(idSocio))) return "EL SOCIO NO SE ENCUENTRA ACTIVO";
+            
+            if (!L_Activos.Exists(socio => socio.Id.Equals(Convert.ToUInt32(idSocio)))) return "SOCIO INEXISTENTE"; // el socio no se encuentra registrado dentro de la colección de socios en el club deportivo.
+            //if (!L_Inactivos.Exists(socio => socio.Id.Equals(Convert.ToUInt32(idSocio)))) return "EL SOCIO NO SE ENCUENTRA ACTIVO"; Cambiar para el TP Integrador
             if (!L_Actividades.Exists(actividad => actividad.id.Equals(actividadDeportiva))) return "ACTIVIDAD INEXISTENTE"; // la actividad deportiva no se encuentra dentro de la colección de actividades en el club deportivo.
             Actividades actividad = this.L_Actividades.Find(act => act.id.Equals(actividadDeportiva));
-            Socios socio = L_Activos.Find(socio => socio.Id.Equals(idSocio));
+            Socios socio = L_Activos.Find(socio => socio.Id.Equals(Convert.ToUInt32(idSocio)));
             if (socio.ActividadesInscriptas.Count >= TOPEACTIVIDADESPORSOCIO) return "TOPE DE ACTIVIDADES ALCANZADO"; //cuando el socio ya participa en tres actividades deportivas
 
-            socio.ActividadesInscriptas.Add(actividad);
-            actividad.Inscriptos.Add(socio);
+            if(actividad.cupo > 0) { 
+                socio.ActividadesInscriptas.Add(actividad);
+                actividad.Inscriptos.Add(socio);
+                actividad.cupo--;
+            } else {
+                return "NO HAY CUPO DISPONIBLE PARA LA ACTIVIDAD: " + actividad.nombreActividad.ToLowerInvariant + ".";
+            }
+            
             return "INSCRIPCIÓN EXITOSA"; // el socio se ha inscrito correctamente en la actividad deportiva y se ha reservado un cupo para él).
         }
 
         public string InscribirActividad(sbyte actividadDeportiva, uint dni) {
-            Console.WriteLine("AAAAAAAAAA");
             if (!L_Activos.Exists(socio => socio.DNI.Equals(dni))) return "SOCIO INEXISTENTE"; // el socio no se encuentra registrado dentro de la colección de socios en el club deportivo.
             //if (!L_Inactivos.Exists(socio => socio.DNI.Equals(dni))) return "EL SOCIO NO SE ENCUENTRA ACTIVO"; Cambiar para el TP Integrador.
             if (!L_Actividades.Exists( actividad => actividad.id.Equals(actividadDeportiva))) return "ACTIVIDAD INEXISTENTE"; // la actividad deportiva no se encuentra dentro de la colección de actividades en el club deportivo.
@@ -39,8 +45,13 @@ namespace ClubDeportivo
             Socios socio = L_Activos.Find(socio => socio.DNI.Equals(dni));
             if (socio.ActividadesInscriptas.Count >= TOPEACTIVIDADESPORSOCIO) return "TOPE DE ACTIVIDADES ALCANZADO"; //cuando el socio ya participa en tres actividades deportivas
 
-            socio.ActividadesInscriptas.Add(actividad);
-            actividad.Inscriptos.Add(socio);
+            if (actividad.cupo > 0) {
+                socio.ActividadesInscriptas.Add(actividad);
+                actividad.Inscriptos.Add(socio);
+                actividad.cupo--;
+            } else {
+                return "NO HAY CUPO DISPONIBLE PARA LA ACTIVIDAD: " + actividad.nombreActividad.ToLowerInvariant + ".";
+            }
             return "INSCRIPCIÓN EXITOSA"; // el socio se ha inscrito correctamente en la actividad deportiva y se ha reservado un cupo para él).
         }
         public void AltaSocio(NoSocios noSocios) {

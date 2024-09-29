@@ -27,6 +27,7 @@ namespace ClubDeportivo {
             this.Apellido = Apellido;
             this.Activo = activo;
             DNI = dni;
+            ActividadesInscriptas = new List<Actividades>();
             FechaIngreso = DateTime.Now;
             Console.WriteLine("\nEl Socio: " + this.Apellido +", "+ this.Nombre + " DNI: " + dni + " Fue Ingresado Exitosamente.");
             Console.WriteLine("Con Nro de ID: " + this.Id);
