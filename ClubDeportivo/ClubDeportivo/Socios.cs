@@ -12,7 +12,7 @@ namespace ClubDeportivo {
         public uint DNI { get; set; }
         public bool Activo { get; set; }
         public DateTime FechaIngreso { get; set; } // Fecha en la que el socio se unió al club
-       // public List<Clases> ClasesInscritas { get; set; } // Lista de clases a las que está inscrito el socio
+        public List<Actividades> ActividadesInscriptas { get; set; } // Lista de actividades a las que está inscripto el socio
       //  public List<Pagos> HistorialPagos { get; set; } // Lista de pagos realizados por el socio
      //   public FichaMedica FichaMedica { get; set; } // Información médica del socio
 
@@ -32,8 +32,8 @@ namespace ClubDeportivo {
         }
 
         // Método para verificar si el socio puede inscribirse en más clases
-        public bool PuedeInscribirseEnClase() {
-            return true;// ClasesInscritas.Count < MaxClases;
+        public bool PuedeInscribirseEnClase(int MaxClases) {
+            return ActividadesInscriptas.Count < MaxClases;
         }
 /*
         // Método para agregar una clase
