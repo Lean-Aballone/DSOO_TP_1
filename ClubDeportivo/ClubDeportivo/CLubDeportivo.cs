@@ -31,9 +31,9 @@ namespace ClubDeportivo
         }
 
         public string InscribirActividad(sbyte actividadDeportiva, uint dni) {
-            
+            Console.WriteLine("AAAAAAAAAA");
             if (!L_Activos.Exists(socio => socio.DNI.Equals(dni))) return "SOCIO INEXISTENTE"; // el socio no se encuentra registrado dentro de la colección de socios en el club deportivo.
-            if (!L_Inactivos.Exists(socio => socio.DNI.Equals(dni))) return "EL SOCIO NO SE ENCUENTRA ACTIVO";
+            //if (!L_Inactivos.Exists(socio => socio.DNI.Equals(dni))) return "EL SOCIO NO SE ENCUENTRA ACTIVO"; Cambiar para el TP Integrador.
             if (!L_Actividades.Exists( actividad => actividad.id.Equals(actividadDeportiva))) return "ACTIVIDAD INEXISTENTE"; // la actividad deportiva no se encuentra dentro de la colección de actividades en el club deportivo.
             Actividades actividad = this.L_Actividades.Find(act => act.id.Equals(actividadDeportiva));
             Socios socio = L_Activos.Find(socio => socio.DNI.Equals(dni));
@@ -58,7 +58,8 @@ namespace ClubDeportivo
                 return;
             }
             if (L_Aspirantes.Exists(aspirante => aspirante.DNI.Equals(dni))) L_Aspirantes.RemoveAll(aspirante => aspirante.DNI.Equals(dni));
-            L_Inactivos.Add(new Socios(nombre, apellido, dni, (uint)L_Inactivos.Count));
+            L_Activos.Add(new Socios(nombre, apellido, dni, (uint)L_Activos.Count, true)); //Cambiar para el TP integrador.
+
         }
         public void ActualizarBBDD(List<Socios> activ, List<Socios> inact) {
             //TODO: implementar pase de NoSocio a socio (remover '?')
