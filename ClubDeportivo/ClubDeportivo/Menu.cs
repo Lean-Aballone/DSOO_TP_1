@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,23 +28,49 @@ namespace ClubDeportivo {
 
             switch (EntradaValidacion(Convert.ToSByte(Console.ReadLine()), 2)) {
                 case 0: return;
-                case 1:
-                    sbyte opc;
-                    Console.Write("Ingresar Nombre: ");
-                    string nombre = Console.ReadLine();
-                    Console.Write("Ingresar Apellido: ");
-                    string apellido = Console.ReadLine();
-                    Console.Write("Ingresar DNI: ");
-                    uint dni = Convert.ToUInt32(Console.ReadLine());
-                    do {
-                        Console.WriteLine("\n\t1. Para Continuar\n\t0. Cancelar");
-                        Console.Write(INGRESENUMERO);
-                        opc = EntradaValidacion(Convert.ToSByte(Console.ReadLine()), 1);
-                        if (opc == 0) Socios(clubDeportivo);
-                        if (opc == 1) clubDeportivo.AltaSocio(nombre,apellido,dni);
-                    } while (opc != 0 && opc != 1 );
+                case 1: {
+                        sbyte opc;
+                        Console.Write("Ingresar Nombre: ");
+                        string nombre = Console.ReadLine();
+                        Console.Write("Ingresar Apellido: ");
+                        string apellido = Console.ReadLine();
+                        Console.Write("Ingresar DNI: ");
+                        uint dni = Convert.ToUInt32(Console.ReadLine());
+                        do {
+                            Console.WriteLine("\n\t1. Para Continuar\n\t0. Cancelar");
+                            Console.Write(INGRESENUMERO);
+                            opc = EntradaValidacion(Convert.ToSByte(Console.ReadLine()), 1);
+                            if (opc == 0) Socios(clubDeportivo);
+                            if (opc == 1) clubDeportivo.AltaSocio(nombre, apellido, dni);
+                        } while (opc != 0 && opc != 1);
+                    }
                     break;
-                case 2:
+                case 2: { 
+                        sbyte opc;
+                        do {
+                            Console.WriteLine("\n\t1. Identificar Socio por DNI.\n\t2.Identificar por Nro de socio\n\t0. Cancelar");
+                            Console.Write(INGRESENUMERO);
+                            opc = EntradaValidacion(Convert.ToSByte(Console.ReadLine()), 2);
+                            if (opc == 0) return;
+                            if (opc == 1) {
+                                Console.Write("Ingresar DNI: ");
+                                uint dni = Convert.ToUInt32(Console.ReadLine());
+                                ImprimirListadoDeActividades(clubDeportivo);
+                                sbyte opc2 = EntradaValidacion(Convert.ToSByte(Console.ReadLine()), clubDeportivo.L_Actividades.Count);
+                                if (opc2 == 0) Socios(clubDeportivo);
+                                clubDeportivo.InscribirActividad(opc2, dni);
+                            }
+                            if (opc == 2) {
+                                Console.Write("Ingresar Nro de Socio: ");
+                                int id = Convert.ToInt32(Console.ReadLine());
+                                ImprimirListadoDeActividades(clubDeportivo);
+                                sbyte opc2 = EntradaValidacion(Convert.ToSByte(Console.ReadLine()), clubDeportivo.L_Actividades.Count);
+                                if (opc2 == 0) Socios(clubDeportivo);
+                                clubDeportivo.InscribirActividad(opc2, id);
+                            }
+                        } while (opc != 0 && opc != 1 && opc != 2);
+
+                    }
                     break;
                 default:
                     Socios(clubDeportivo);
@@ -52,6 +79,15 @@ namespace ClubDeportivo {
 
             }
 
+        }
+
+        private static void ImprimirListadoDeActividades(ClubDeportivo clubDeportivo) {
+            sbyte aux = 0;
+            clubDeportivo.L_Actividades.ForEach(a => {
+                aux++;
+                Console.WriteLine("\t" + aux.ToString() + ". " + a.nombreActividad);
+            });
+            Console.WriteLine("\t0. Cancelar");
         }
 
         public static void NoSocios() {
