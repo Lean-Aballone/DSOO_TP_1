@@ -85,7 +85,7 @@ namespace ClubDeportivo {
             sbyte aux = 0;
             clubDeportivo.L_Actividades.ForEach(a => {
                 aux++;
-                Console.WriteLine("\t" + aux.ToString() + ". " + a.nombreActividad);
+                Console.WriteLine("\t" + aux.ToString() + ". " + a.nombreActividad + " (" + a.cupo + ")");
             });
             Console.WriteLine("\t0. Cancelar");
             Console.Write(INGRESENUMERO);
