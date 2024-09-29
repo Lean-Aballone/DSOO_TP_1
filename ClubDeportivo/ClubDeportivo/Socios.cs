@@ -21,10 +21,11 @@ namespace ClubDeportivo {
  //           HistorialPagos = new List<Pagos>();
         }
 
-        public Socios(string Nombre, string Apellido, uint dni, uint Id) {
+        public Socios(string Nombre, string Apellido, uint dni, uint Id, bool activo) {
             this.Id = Id + 1;
             this.Nombre = Nombre;
             this.Apellido = Apellido;
+            this.Activo = activo;
             DNI = dni;
             FechaIngreso = DateTime.Now;
             Console.WriteLine("\nEl Socio: " + this.Apellido +", "+ this.Nombre + " DNI: " + dni + " Fue Ingresado Exitosamente.");
