@@ -4,7 +4,7 @@ namespace ClubDeportivo.Models
     {
         public DateTime Fecha { get; set; }
         public TimeSpan Hora { get; set; }
-        public Socio Socio { get; set; }
+        //public Socios Socio { get; set; }
 
         public bool VerificarTurnoSemanal()
         {

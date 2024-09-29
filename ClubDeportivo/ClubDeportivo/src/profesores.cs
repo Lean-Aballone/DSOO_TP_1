@@ -1,5 +1,5 @@
 // Models/Profesores.cs
-public class Profesores : Plantel
+public class Profesores
 {
     public void RegistrarAsistencia() 
     {
